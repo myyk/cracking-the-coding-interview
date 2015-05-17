@@ -47,7 +47,11 @@ object PhoneScreen1 {
     }
   }
 
-  // iterative solution
+  /*
+   * iterative solution - as I coded it during the actual phone screen.
+   * I don't really love this solution and it looks horrible. I kept it for
+   * reference purposes to show how I may clean it up for actual production use.
+   */
   def findTimes1(w: Long, services: Set[String]): Seq[Long] = {
     val serviceHeap = new mutable.PriorityQueue[(Long, Iterator[Long])]()
 
@@ -85,7 +89,10 @@ object PhoneScreen1 {
     result
   }
 
-  // Recursive solution
+  /*
+   * Recursive solution - This to me looks a lot closer to what I would say would be acceptable
+   * to use in production.
+   */
   def findTimes2(w: Long, services: Set[String]): Seq[Long] = {
     val serviceIterators = services.map(make_interface(_))
 
