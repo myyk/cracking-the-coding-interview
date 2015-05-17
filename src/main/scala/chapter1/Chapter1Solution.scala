@@ -81,4 +81,46 @@ object Chapter1Solution {
       }
     }
   }
+
+  /**
+   * Mutable
+   */
+  def rotateSquareMatrix(matrix: Array[Array[Long]]): Array[Array[Long]] = {
+    println(s"=============================")
+    def printMatrix = {
+      for {
+        arrays <- matrix
+      } {
+        println(arrays.mkString(" "))
+      }
+    }
+
+    printMatrix
+    for {
+      layer <- 0 until matrix.size / 2
+      first = layer
+      last = matrix.size - 1 - layer
+      i <- first until last
+    } {
+      val offset = i - layer
+
+      // save top
+      val top = matrix(first)(i)
+      println(s"saving $top")
+      // left -> top
+      matrix(first)(i) = matrix(last-offset)(first)
+      println(s"moving ${matrix(last-offset)(first)}")
+      // bottom -> left
+      matrix(last-offset)(first) = matrix(last)(last-offset)
+      println(s"moving ${matrix(last)(last-offset)}")
+      // right -> bottom
+      matrix(last)(last-offset) = matrix(i)(last)
+      println(s"moving ${matrix(i)(last)}")
+      // top -> right
+      matrix(i)(last) = top
+      println(s"moving $top")
+      printMatrix
+    }
+    matrix
+  }
 }
