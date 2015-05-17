@@ -2,9 +2,9 @@ package phoneScreens
 
 import org.scalatest.FlatSpec
 import org.scalatest.Matchers
-import TwitterPhoneScreen._
+import PhoneScreen1._
 
-class TwitterPhoneScreenTest extends FlatSpec with Matchers {
+class PhoneScreen1Test extends FlatSpec with Matchers {
   "findTimes1" should "work for a simple case" in {
     simpleFindTimes(findTimes1)
   }

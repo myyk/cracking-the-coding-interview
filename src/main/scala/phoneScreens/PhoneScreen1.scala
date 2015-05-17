@@ -4,7 +4,7 @@ import scala.collection.mutable
 import scala.collection.SortedSet
 import scala.annotation.tailrec
 
-object TwitterPhoneScreen {
+object PhoneScreen1 {
 
   /*
     Given: A global timestamp service that generates monotonically increasing timestamps (64 bit integers).
