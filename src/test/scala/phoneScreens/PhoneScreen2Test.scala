@@ -33,7 +33,7 @@ class PhoneScreen2Test extends FlatSpec with Matchers with OptionValues {
     }
 
     for {
-      _ <- (0 to 1000)
+      _ <- (0 to 10000)
       val randomInt = Random.nextInt()
       if !randomNumbers.contains(randomInt)
     } {

@@ -19,7 +19,6 @@ object PhoneScreen2 {
   }
 
   def rotatedFind(t: Int, a: Array[Int], minIndex: Int, maxIndex: Int): Option[Int] = {
-//    println(s"min = $minIndex\nmid = ${(minIndex + maxIndex) / 2}\nmax = $maxIndex")
     if (minIndex > maxIndex) {
       None
     } else {
@@ -49,7 +48,7 @@ object PhoneScreen2 {
   }
 
   def binarySearch(t: Int, a: Array[Int]): Option[Int] = {
-    binarySearch(t, a, 0, a.size)
+    binarySearch(t, a, 0, a.size - 1)
   }
 
   //Basic binary search
@@ -58,8 +57,7 @@ object PhoneScreen2 {
     if (minIndex > maxIndex) {
       None
     } else {
-      val midIndex = (minIndex + maxIndex) / 2
-
+      val midIndex = minIndex + ((maxIndex - minIndex) / 2)
       if (t == a(midIndex)) {
         Some(midIndex)
       } else if (t < a(midIndex)) {
